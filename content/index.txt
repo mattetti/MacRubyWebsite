@@ -74,6 +74,5 @@ src="../images/icon_cloud.png" alt="#" />Latest Tweets</h2>
   </div>
 </div>
 
-<script type="text/javascript" src="/javascripts/blogger.js"</script>
-<script type="text/javascript"
-src="http://twitter.com/statuses/user_timeline/macruby.json?callback=twitterCallback2&count=5"></script>
+<script type="text/javascript" src="/javascripts/blogger.js"></script>
+<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/macruby.json?callback=twitterCallback2&count=5"></script>
