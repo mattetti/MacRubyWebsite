@@ -25,7 +25,7 @@ $(document).ready(function() {
 <script type="text/javascript">
   SyntaxHighlighter.autoloader(
     'js jscript javascript  /javascripts/shBrushJScript.js',
-    'ruby                   /javascripts/shBrushRuby.js'
+    'ruby                   /javascripts/shBrushRuby.js',
     'bash                   /javascripts/shBrushBash.js'
   );
   SyntaxHighlighter.config.stripBrs = false;

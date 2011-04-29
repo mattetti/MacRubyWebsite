@@ -214,14 +214,9 @@ header h1.logo a {
   -moz-border-radius: 5px;
   border-radius: 5px;
   display: block;
-  border: 1px solid transparent;
   padding: 0 10px;
 }
 .primaryNav li a:hover {
-  border-top: 1px solid #252525;
-  border-left: 1px solid #252525;
-  border-right: 1px solid #434343;
-  border-bottom: 1px solid #434343;
   background: #292929;
 }
 /* Promo */
@@ -284,7 +279,6 @@ header h1.logo a {
 
 .grid .gridContent {
   overflow: hidden;
-  xxxpadding: 0 10px; 
 }
 .grid .boxed {
   margin-top: -19px;
@@ -297,13 +291,6 @@ header h1.logo a {
   -webkit-box-shadow:inset 0 0 2px white;
   box-shadow:inset 0 0 2px white;
 }
-  
-  
-.grid,
-.mainContent {
-  xxxpadding-bottom: 150px; /* Height of footer */
-}
-
 
 section.block {
   border: 1px solid #cecece;
