@@ -9,6 +9,7 @@ filter: erb
 $(document).ready(function() {
 	$(".equalHeights1").equalHeights(200,600);
 	$(".equalHeights2").equalHeights(200,600);
+	$(".equalHeights3").equalHeights(200,600);
 });
 </script>
 
