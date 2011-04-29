@@ -257,6 +257,9 @@ header h1.logo a {
 .grid .headerText .date {
   float: right;
 }
+.grid .abstract {
+  min-height: 100px;
+}
 .grid .abstract:hover {
   color: white;
   background: #971111;
@@ -314,7 +317,6 @@ section.blockMain {
   -webkit-box-shadow:inset 0 0 2px white;
   box-shadow:inset 0 0 2px white;
 }
-
 
 /* Footer */
 footer {

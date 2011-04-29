@@ -17,19 +17,19 @@ h3(headerText lobsterFont).  MacRuby Development
 <section class="block">
 MacRuby development happens in the trunk Subversion branch. However, be careful, because trunk may not work (or even compile) all of the time.
 
-<pre class="brush: js">
+<pre class="brush: bash">
 $ svn co http://svn.macosforge.org/repository/ruby/MacRuby/trunk MacRuby-trunk
 </pre>
 
 If you want to grab the sources of a specific release, look into the tags directory. For example, to grab the sources of the 0.7.1 release:
 
-<pre class="brush: js;">
+<pre class="brush: bash;">
 $ svn co http://svn.macosforge.org/repository/ruby/MacRuby/tags/0.7.1 MacRuby-0.7.1
 </pre>
 
 For building instructions, please refer to README.rdoc file, but the basic build instructions are:
 
-<pre class="brush: js;">
+<pre class="brush: bash;">
 $ rake
 $ sudo rake install
 </pre>

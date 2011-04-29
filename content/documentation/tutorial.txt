@@ -8,40 +8,36 @@ filter:
   - erb
   - textile
 ---
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
 
-<div class="author">
+<section class="blockMain">
+
+<h3 class="headerText lobsterFont">
   By <%= member_name(@page.author) %>
-</div>
+</h3>
 
-<div class='tutorial'>
-Welcome to the MacRuby Tutorial. In this tutorial, you will learn the basic things you need to know in order to develop with Mac OS X frameworks using MacRuby.
+<section class="block">
+<p>Welcome to the MacRuby Tutorial. In this tutorial, you will learn the basic things you need to know in order to develop with Mac OS X frameworks using MacRuby.</p>
+<p>This tutorial is not about learning Ruby or Objective-C. There are many resources about that on the web. In any case, you don't need to know Objective-C to follow this tutorial.</p>
+<p>MacRuby, as a port of the official Ruby code base, should run your existing Ruby code. Just take into account that it is based on the 1.9 version, which presents some incompatibilities with the current stable version, 1.8.
+<p>Please download MacRuby and install before preceeding with this tutorial.
+<p>If you want to check out some example code before starting the tutorial, you will find some in the <code>/Developer/Examples/Ruby/MacRuby</code> directory (or you can read them from your browser).
+</section>
 
-This tutorial is not about learning Ruby or Objective-C. There are many resources about that on the web. In any case, you don't need to know Objective-C to follow this tutorial.
+h3(headerText lobsterFont). Loading Frameworks
 
-MacRuby, as a port of the official Ruby code base, should run your existing Ruby code. Just take into account that it is based on the 1.9 version, which presents some incompatibilities with the current stable version, 1.8.
-
-Please download MacRuby and install before preceeding with this tutorial.
-
-If you want to check out some example code before starting the tutorial, you will find some in the <code>/Developer/Examples/Ruby/MacRuby</code> directory (or you can read them from your browser).
-
-h3. Loading Frameworks
-
-The first thing you have to do in your MacRuby script is to load the framework you want to use.
-
-If you plan to work on a Cocoa application, you will need the Cocoa framework. You can load it using the framework method:
-
-<pre class="commands">
+<section class="block">
+<p>The first thing you have to do in your MacRuby script is to load the framework you want to use.
+<p>If you plan to work on a Cocoa application, you will need the Cocoa framework. You can load it using the framework method:
+<pre class="brush: ruby;">
 $ /usr/local/bin/macirb --simple-prompt
 >> framework 'Cocoa'
 => true
 </pre>
-
-When you load a framework, MacRuby will also automatically load all of its dependencies. For example, both Foundation and AppKit will be loaded for you if you load Cocoa.
-
-A framework can be written in C, Objective-C, or both. The C definitions, such as structures, constants, enumerations, functions, and more, will also be available when you call the framework method.
-
-You can read a complete list of frameworks that ship with Mac OS X here.
+<p>When you load a framework, MacRuby will also automatically load all of its dependencies. For example, both Foundation and AppKit will be loaded for you if you load Cocoa.
+<p>A framework can be written in C, Objective-C, or both. The C definitions, such as structures, constants, enumerations, functions, and more, will also be available when you call the framework method.
+<p>You can read a complete list of frameworks that ship with Mac OS X here.
+</section>
 
 h3. Accessing Classes
 
@@ -481,3 +477,5 @@ The interface is described in the <code>/Library/Frameworks/MacRuby.framework/He
 
 The <code>/Developer/Examples/Ruby/MacRuby/EmbeddedMacRuby</code> sample code shows how to use this new functionality.
 </div>
+
+</section>

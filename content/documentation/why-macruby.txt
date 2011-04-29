@@ -7,6 +7,8 @@ filter:
 ---
 h2(headerText lobsterFont). <%= h(@page.title) %>
 
+<section class="blockMain">
+
   <p>
     "Mac OS X":http://en.wikipedia.org/wiki/Mac_OS_X 10.5 (Leopard) provides a build of "MRI":http://en.wikipedia.org/wiki/Ruby_MRI (Matz's Ruby Interpreter), version 1.8.6. This is the current de facto standard for Ruby interpreters; it is stable, well documented, tested, and understood, etc. If you need to run a legacy Ruby script, with a minimum of hassle, the default ruby(1) command is probably the right choice. Similarly, if you have a legacy "RubyCocoa":http://en.wikipedia.org/wiki/RubyCocoa application which you simply wish to run, RubyCocoa is certainly the right choice.
   </p>
@@ -70,4 +72,5 @@ h3(headerText lobsterFont). Experimentation
   <p>
     MacRuby provides a convenient way to experiment with Ruby 1.9 on Mac OS X (e.g., trying out new syntax). At the same time, MacRuby provides a convenient way to experiment with the Mac OS X frameworks. For example, macirb allows interactive access to both Ruby and Mac OS X libraries. So, for example, a Cocoa programmer might find MacRuby to be a congenial prototyping environment, even if the ultimate product needs to be written strictly in Objective-C.
   </p>
+</section>
 </section>

@@ -7,29 +7,31 @@ filter:
 ---
 <a style="float:right" href="/feeds/posts/macruby/index.xml"><img src="/images/feed.png"></a>
 <a style="float:right;margin-right:10px;" href="/blog/title_index.html">Blog Overview</a>
-<h1 class="title"> <%= h(@page.title) %> </h1>
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h1>
+
+<section class="blockMain">
+
 <%
   articles = @pages.find(:all, :in_directory => @page.dir, :recursive => true,
       :sort_by => "created_at", :reverse => true, :blog_post => true)
   articles.delete(@page)
   paginate(articles, 3) do |page|
 -%>
-<div class="article">
-  <div class="header">
-    <div class="date"><%= page.created_at.strftime('%Y-%m-%d') %></div>
-    <div class="title"><%= link_to_page(page) %></div>
-  </div>
-<!--
-  <div class="author">
-    By <%= member_name(page.author) %>
-  </div>
--->
-  <div class="body">
-    <%= render(page) %>
-  </div>
+<div class="somethingHere">
+  <h3 class="headerText lobsterFont"><%= link_to_page(page) %></h3>
+  <%= page.created_at.strftime('%Y-%m-%d') %>
+  <!--
+    <div class="author">
+      By <%= member_name(page.author) %>
+    </div>
+  -->
+  <section class="block">
+      <%= render(page) %>
+  </section>
 </div>
 <% end -%>
 <hr size="0" noshade class="doublerule" />
 <p style="text-align: center"><%= @pager.prev? ? "&laquo; "+link_to("newer", @pager.prev) : "<span style='color:#999'>&laquo; newer</span>" %> | Page <%= @pager.number %> of <%= @pager.number_of_pages %> | <%= @pager.next? ? link_to("older", @pager.next)+" &raquo;" : "<span style='color:#999'>older &raquo;</span>" %></p>
 
 
+</section>
