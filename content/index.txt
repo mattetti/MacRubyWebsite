@@ -49,7 +49,7 @@ filter:
       <h2 class="headerText1 lobsterFont"><img class="gridIcon3" src="../images/icon_notebook.png" alt="#" />The Definitive Guide</h2>
       <div class="gridContent boxed equalHeights2">
         <div class="padding15">
-<!-- <img src="http://covers.oreilly.com/images/0636920000723/rc_s.gif" alt="MacRuby Book by Matt Aimonetti" style="float:left; padding:0.5em 1em 0 0"> -->
+<img src="images/d_guide.gif" alt="MacRuby Book by Matt Aimonetti" class="dGuide" />
 <a href="http://merbist.com">Matt Aimonetti</a> is currently working on
 a <a href="http://oreilly.com/catalog/0636920000723/">MacRuby book for
 O'Reilly</a>. It is under development and the book is being published as
