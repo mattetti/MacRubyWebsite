@@ -5,24 +5,28 @@ filter:
   - erb
   - textile
 ---
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
 
-h2. Latest Stable Release
+<section class="blockMain">
 
-<p>
+h3(headerText lobsterFont). Latest Stable Release
+
+<section class="block">
 You can download <a href="http://www.macruby.org/files/MacRuby%200.10.zip">MacRuby 0.10</a> as a standalone binary installer.
 <em>Note: this release will only work on Intel 64-bit machines running Snow Leopard (10.6) or higher.</em>
-</p>
+</section>
 
-h2. Nightly builds
+h3(headerText lobsterFont). Nightly builds
 
-<p>
+<section class="block">
 You can download one of MacRuby's development branch <a href="http://www.macruby.org/files/nightlies">nightly builds</a>, which also come as standalone binaries. Please note that these builds are development versions of MacRuby and might perhaps be unstable.
 <em>Note: these builds only work on Intel 64-bit machines running on Snow Leopard (10.6) or higher.</em>
-</p>
+</section>
 
-h2. Source
+h3(headerText lobsterFont). Source
 
-<p>
+<section class="block">
   You can always get the latest sources from our <a href='/source.html'>Subversion or Git repository</a>.
-</p>
+</section>
+
+</section>

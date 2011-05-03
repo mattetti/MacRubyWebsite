@@ -13,7 +13,6 @@ filter:    erb
 </head>
 <body id="default">
 
-
 <div class="wrapper clearfix">  
 
 <header>
@@ -37,5 +36,3 @@ filter:    erb
 <!-- Dont forget analytics -->  
 </body>
 </html>
-
-
