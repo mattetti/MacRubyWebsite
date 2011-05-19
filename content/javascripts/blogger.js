@@ -1,14 +1,15 @@
-function twitterCallback2(twitters) {
+function twitterCallback(twitters) {
+  var tweets = twitters.results;
   var statusHTML = [];
-  for (var i=0; i<twitters.length; i++){
-    var username = twitters[i].user.screen_name;
+  for (var i=0; i<tweets.length; i++){
+    var username = tweets[i].from_user;
     console.log(username)
-    var status = twitters[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+    var status = tweets[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
       return '<a href="'+url+'">'+url+'</a>';
     }).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
       return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
     });
-    statusHTML.push('<li class="abstract padding15"><span>'+status+'</span> <a style="font-size:85%" href="http://twitter.com/'+username+'/statuses/'+twitters[i].id_str+'">'+relative_time(twitters[i].created_at)+'</a></li>');
+    statusHTML.push('<li class="abstract padding15"><span>'+status+'</span> <a style="font-size:85%" href="http://twitter.com/'+username+'/statuses/'+tweets[i].id_str+'">'+relative_time(tweets[i].created_at)+ " by "+ username +'</a></li>');
   }
   document.getElementById('twitter_update_list').innerHTML = statusHTML.join('');
 }
