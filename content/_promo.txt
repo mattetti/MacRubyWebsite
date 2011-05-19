@@ -1,5 +1,5 @@
 <!-- <img src="images/promo.jpg" alt="#"> -->
-
+<div style="padding: 30px;"><!-- Refactor -->
 
 <div class="codaNav">	 <!-- Refactor -->
 <a rel="coda-slider-1" href="#1" class="xtrig">What is MacRuby?</a> |
@@ -12,10 +12,10 @@
 <style>
 #coda-slider-1, 
 #coda-slider-1 .panel {
-  width: 960px 
+  width: 900px;
 }
 .heightSet {
-  height: 300px;
+  height: 260px;
 }
 .coda-nav { display: none }
 </style>
@@ -54,3 +54,5 @@
 		</div>
 	</div><!-- .coda-slider -->
 </div><!-- .coda-slider-wrapper -->
+
+</div>
