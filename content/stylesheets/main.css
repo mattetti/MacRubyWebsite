@@ -257,10 +257,10 @@ header h1.logo a {
   float: right;
 }
 .grid .abstract {
-  min-height: 100px;
+  border-bottom: 1px solid #D8D8D8;
 }
 .grid .abstract:last-child {
-  border-top: 1px solid #D8D8D8;
+  border: none;
 }
 .grid .abstract:hover {
   color: white;
