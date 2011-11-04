@@ -8,7 +8,9 @@ filter:
   - erb
   - textile
 ---
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
+
+<section class="block">
 
 <div class="author">
   By <%= member_name(@page.author) %>
@@ -284,3 +286,5 @@ window.did_expose { | rect| ... }
 Each method for a delegate has to be mapped with an individual delegating call.
 
 </div>
+
+</section>

@@ -5,7 +5,9 @@ filter:
   - erb
   - textile
 ---
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
+
+<section class="block">
 
 MacRuby is a unique blend of Ruby 1.9 and Objective-C.  The goal of the MacRuby project is to be 100% compatible syntactically and behaviorally with Ruby 1.9.  Because of the project's goals of seamless integration with Objective-C, however, there are significant differences in the internals of the runtime.  The following presents an overview of what is unique to MacRuby vs. the standard Ruby 1.9 'MRI' interpreter.
 
@@ -60,3 +62,5 @@ The new collector is generational. It uses write barriers to filter modification
 Collections are performed in a separate thread, which doesn't interrupt the program execution flow, except to call finalizers. Fortunately, this happens quite rarely.
 
 The GC and ObjectSpace APIs have been re-implemented for the new GC. This has led to, for instance, ObjectSpace#each_object being available by default, with no runtime cost at all! It even includes all pure Objective-C objects, which is great for debugging purposes.
+
+</section>

@@ -8,7 +8,9 @@ filter:
   - erb
   - textile
 ---
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
+
+<section class="block">
 
 <div class="author">
   By <%= member_name(@page.author) %>
@@ -56,6 +58,7 @@ vert << scroll_view(:layout => {:expand => [:width, :height]}) do |scroll|
   end
 end
 <% end %>
+
 
 I've made one layout modification which was to add an extra column to our table to display the PostRank for each post. The PostRank column and post data columns use custom cell formatters so we can get the layout we want. I also wanted to constrain the PostRank column to a set size, 34 pixels seemed to look good.  In order to use my custom formatters I use <code>setDataCell</code> on the <code>column</code> objects. The parameter to <code>setDataCell</code> is an instantiated instance of our formatter class. I have two classes, <code>PostRankCell</code> and <code>PostCell</code> for the PostRank and post columns respectively.
 
@@ -278,3 +281,5 @@ With that, well, you'll probably need to download the source code to see it all 
 As for the next installment. I've got a few things I still want to do, including: tabbing between widgets, submitting the text field on return, a progress indicator as the feed information is being retrieved and adding a tabbed interface to allow showing feed, post and top post information. I'm not sure which of these things I'll tackle next. There are a few helper methods I want to try to add to HotCocoa from this article that I'll probably do first.  So, until next time.
 
 </div>
+
+</section>

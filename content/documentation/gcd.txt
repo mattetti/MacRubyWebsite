@@ -8,7 +8,9 @@ filter:
   - erb
   - textile
 ---
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
+
+<section class="block">
 
 <div class="author">
   By <%= member_name(@page.author) %>
@@ -141,3 +143,5 @@ h3. The Future
 There’s much more to find in MacRuby’s support for Grand Central Dispatch - @Dispatch::Semaphore@ is a powerful tool for inter-thread communication and resource management, and the @Dispatch::Source@ class provides an elegant yet low-level foundation for event-based programming. Soon to come is the release of ControlTower, a web server built entirely in MacRuby with GCD. Additionally, the MacRuby team is planning a library to provide high-level, Ruby-esque abstractions on top of the GCD primitives. All in all, it’s a tremendously exciting time to be a Ruby programmer on Mac OS X!
 
 </div>
+
+</section>

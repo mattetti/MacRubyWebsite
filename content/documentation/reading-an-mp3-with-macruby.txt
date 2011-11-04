@@ -8,7 +8,9 @@ filter:
   - erb
   - textile
 --- 
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
+
+<section class="block">
 
 <div class="author">
   By <%= member_name(@page.author) %>
@@ -188,3 +190,5 @@ $ macirb --simple-prompt
 Now that this is working, the rest of the tags can be added in a similar fashion. The final code for this example is available on GitHub from <a href="http://github.com/nickludlam/TagLib.framework">http://github.com/nickludlam/TagLib.framework</a>.
 
 </div>
+
+</section>

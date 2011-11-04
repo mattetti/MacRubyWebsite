@@ -7,7 +7,7 @@ filter:
 ---
 h2(headerText lobsterFont). <%= h(@page.title) %>
 
-<section class="blockMain">
+<section class="block">
 
   <p>
     "Mac OS X":http://en.wikipedia.org/wiki/Mac_OS_X 10.5 (Leopard) provides a build of "MRI":http://en.wikipedia.org/wiki/Ruby_MRI (Matz's Ruby Interpreter), version 1.8.6. This is the current de facto standard for Ruby interpreters; it is stable, well documented, tested, and understood, etc. If you need to run a legacy Ruby script, with a minimum of hassle, the default ruby(1) command is probably the right choice. Similarly, if you have a legacy "RubyCocoa":http://en.wikipedia.org/wiki/RubyCocoa application which you simply wish to run, RubyCocoa is certainly the right choice.

@@ -5,8 +5,10 @@ filter:
   - erb
   - textile
 ---
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
 
+<section class="block">
+  
 <div id="status">
 The goal of this page is to keep a permanent status of frameworks and classes that need to be mapped in HotCocoa.
 
@@ -33,3 +35,5 @@ h2. AppKit
   <% end -%>
 </table>
 </div>
+
+</section>

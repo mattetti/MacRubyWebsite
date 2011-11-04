@@ -5,7 +5,9 @@ filter:
   - erb
   - textile
 ---
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
+
+<section class="bloc">
 
 HotCocoa is a thin, idiomatic Ruby layer that sits above Cocoa and other frameworks. HotCocoa is currently included in the MacRuby distributions. 
 
@@ -50,3 +52,5 @@ h3. Want to learn more about HotCocoa?
 Now that you understand the basics of what HotCocoa is and why we are building it, please look at the "tutorials":/documentation.html for examples of how to build OS X applications with it. 
 
 HotCocoa is a project developed on "GitHub":http://github.com/richkilmer/hotcocoa. Make sure to connect there to get the latest bits.
+
+</section>

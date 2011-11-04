@@ -8,7 +8,9 @@ filter:
   - erb
   - textile
 --- 
-h1(title). <%= h(@page.title) %>
+h2(headerText lobsterFont). <%= h(@page.title) %>
+
+<section class="block">
 
 <div class="author">
   By <%= member_name(@page.author) %>
@@ -141,5 +143,7 @@ h3. See also
   to their MacRuby representation.
 
 </div>
+
+</section>
 
 
