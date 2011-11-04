@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 --- 
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 We are glad to announce the release of MacRuby 0.8, after two months and a half of development since the previous version.
 <% end %>
@@ -32,3 +36,5 @@ However, we do not expect further releases to introduce significant features, as
 The tickets in our tracker have recently been triaged into two piles: those "needed for 1.0":http://www.macruby.org/trac/report/17 and those which will be addressed in "later releases":http://www.macruby.org/trac/report/18. 
 
 We will organize bug smashes in order to collectively reduce the 1.0 tickets. The very first one was organized a couple weeks ago and was a success, as we were able to sort and reduce most of our tickets. We will likely start fixing bugs for real in the second one, which will be announced on the "mailing-list":http://lists.macosforge.org/mailman/listinfo.cgi/macruby-devel soon. Stay tuned!
+
+</section>

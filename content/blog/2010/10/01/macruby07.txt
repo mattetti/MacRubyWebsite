@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 ---
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 After 5 months of development, we are happy to announce the immediate availability of MacRuby 0.7. 
 <% end %>
@@ -76,3 +80,5 @@ This release passes an average of 90% of total "RubySpecs":http://rubyspec.org/,
 As always, Ruby compatibility is a work in progress, and MacRuby is still not able to run Rails out of the box. We believe that the next release of MacRuby will eventually implement the missing pieces.
 
 We hope you enjoy this release and thank you for helping us converging MacRuby to a first stable release!
+
+</section>

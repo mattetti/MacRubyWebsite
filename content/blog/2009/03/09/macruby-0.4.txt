@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 --- 
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 After several months of development and some slight delays, MacRuby 0.4 is now available. Get it here while it's still hot!
 <% end %>
@@ -86,3 +90,5 @@ While MacRuby 0.4 turns out to be pretty stable when it comes to Cocoa developme
 We hope that you will enjoy this release. Please let us know if you find any problems.
 
 Stay tuned for more details about the next release: 0.5, which will be focusing on performance.
+
+</section>

@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 ---
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 It is a great pleasure to announce the immediate availability of MacRuby 0.3! We have been working very hard on this release for several months and, while it's still a developer release, we hope that you will give it a try. Get it while it's still hot!
 <% end %>
@@ -34,3 +38,5 @@ We also support Interface Builder in this release. You can define classes, outle
 Finally, of course, lots of bugs were fixed. We now have a pretty good Cocoa support and can run most of the "LimeChat":http://limechat.net/ application (which is currently being ported from RubyCocoa).  We also re-implemented the "PagePacker":http://weblog.bignerdranch.com/?p=23 application from Objective-C, which now ships "as an example":http://www.macruby.org/trac/browser/MacRuby/tags/0.3/sample-macruby/PagePacker in the MacRuby distribution.  On the pure Ruby side of things, a lot of bugs have been fixed and we are now able to run some commands of RubyGems. Installing simple gems should work. Don't expect MacRuby to run Rails yet, though!
 
 MacRuby is progressively turning more stable with every release. Please give it a try and report any problem you find!  If you want to join the project and help, volunteers are also greatly welcome!
+
+</section>

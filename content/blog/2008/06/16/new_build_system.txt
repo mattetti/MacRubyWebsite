@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 ---
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 MacRuby trunk got a new build system, entirely written with "Rake":http://rake.rubyforge.org/. We managed to replace the previous autotools-based build system with a 570 lines of code Rakefile (which can still be refactored). We didn't really need autotools since MacRuby aims to be installed on only one platform: Mac OS X. Maintaining the autotools files were really difficult, and we are very glad to now have a pure-Ruby build script.
 <% end %>
@@ -125,3 +129,5 @@ MacRuby version 0.3 (ruby 1.9.0 2008-06-03) [universal-darwin9.0]
 These are very premature results, we expect to continue reducing the time spent in the dispatcher, in the near future, and hopefully to make it twice faster.
 
 On a side note, Konrad M. Lawson was kind enough to generate a "very nice screencast of MacRuby":http://foolsworkshop.com/rubycocoa/2008/06/macruby-tutorial demonstrating the Xcode/IB integration. Thanks Konrad!
+
+</section>

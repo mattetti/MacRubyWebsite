@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 ---
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 A new development version of the "BridgeSupport":http://bridgesupport.macosforge.org/trac/wiki project, now based on the clang/LLVM compiler framework, is available for testing!
 <% end %>
@@ -40,3 +44,5 @@ h3. Help!
 Please help us identifying possible problems by installing this preview release and resuming the development of your MacRuby application. You can also now access APIs dealing with C-level blocks, which wasn't possible before.
 
 Give it a try and "let us know":/contact-us.html if you find any problem.
+
+</section>

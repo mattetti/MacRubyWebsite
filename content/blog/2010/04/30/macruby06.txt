@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 --- 
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 We are pleased to announce the immediate availability of MacRuby 0.6. In the 3 months since the previous release, a number of new features have been added and the overall stability of MacRuby has been substantially improved.
 <% end %>
@@ -155,3 +159,5 @@ There are still several problems to address in order to provide a full-fidelity 
 We hope you enjoy the many improvements in this release!
 
 Development on the next release, 0.7 just started. In that release, we intend to deliver a next generation compiler and virtual machine that provides very good runtime performance for multicore environments. Stay tuned for more updates!
+
+</section>

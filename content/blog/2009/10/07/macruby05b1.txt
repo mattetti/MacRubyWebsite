@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 ---
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 After several months of development we are very glad to announce the first beta release of MacRuby 0.5. As this release has very ambitious goals we will go through a few intermediate releases before shipping the final 0.5.
 <% end %>
@@ -86,3 +90,5 @@ Like most other Ruby implementations, we are now using the "RubySpec":http://rub
 At the time of this writing, MacRuby passes about 91% of the language specs, 80% of the core specs and 72% of the library specs. Our objective is to pass as many RubySpecs as possible.
 
 Thanks to a better compatibility, MacRuby is able to run complex Ruby programs like irb, rake, rubygems, and more. Full compatibility is still a work in progress, but we expect MacRuby to run many more Ruby programs in the near future as we fix bugs and implement missing features.
+
+</section>

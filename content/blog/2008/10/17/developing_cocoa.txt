@@ -8,9 +8,15 @@ filter:
   - erb
   - textile
 --- 
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
   The Apple Developer Connection (ADC) website is now featuring an article about MacRuby, titled "Developing Cocoa Applications Using MacRuby":http://developer.apple.com/mac/articles/scriptingautomation/cocoaappswithmacruby.html. This article will introduce you to MacRuby and guide you through the process of writing a Cocoa application with it.
 <% end %>
 <%= RedCloth.new(@page.excerpt).to_html %>
 
 Enjoy, and do not hesitate to contact us if you have any question!
+
+</section>

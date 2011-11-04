@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 ---
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 Very recently some new projects using <a href="http://rubycocoa.sf.net/">RubyCocoa</a> were released to the public.
 <% end %>
@@ -22,3 +26,5 @@ Very recently some new projects using <a href="http://rubycocoa.sf.net/">RubyCoc
 And, it's hard to not mention "GitNub":http://github.com/Caged/gitnub/wikis, a desktop frontend to the git source control management system. This isn't really a new project, but it's starting to be popular in the development community.
 
 This really demonstrates that RubyCocoa is being adopted by more people, and more importantly, Ruby as a language to write Mac OS X applications. And "the future":/documentation/why-macruby.html is not that far now!
+
+</section>

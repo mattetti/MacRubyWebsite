@@ -9,7 +9,7 @@ filter:
 <a style="float:right;margin-right:10px;" href="/blog/title_index.html">Blog Overview</a>
 <h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
 
-<section class="blockMain">
+<section id="blogIndex" class="blockMain">
 
 <%
   articles = @pages.find(:all, :in_directory => @page.dir, :recursive => true,
@@ -25,9 +25,7 @@ filter:
       By <%= member_name(page.author) %>
     </div>
   -->
-  <section class="block">
       <%= render(page) %>
-  </section>
 </div>
 <% end -%>
 <hr size="0" noshade class="doublerule" />

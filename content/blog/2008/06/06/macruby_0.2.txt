@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 ---
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 After 3 months of development, here comes the second release of MacRuby, 0.2! Check it out while it's hot!
 <% end %>
@@ -96,3 +100,5 @@ MacRuby version 0.2 (ruby 1.9.0 2008-05-17) [universal-darwin9.0]
 MacRuby is still slower in many cases, including very important ones such as objects allocation and methods dispatch. There are also too many areas in String, Array and Hash where we perform much less well than we should.
 
 We plan to address this in the next release (0.3) as well as many other things, so stay tuned!
+
+</section>

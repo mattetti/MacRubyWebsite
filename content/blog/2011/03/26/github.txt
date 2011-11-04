@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 --- 
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 The MacRuby source code repository is moving to GitHub!
 <% end %>
@@ -22,3 +26,5 @@ Only the source code repository has moved, the rest of the infrastructure, such 
 The development of MacRuby now continues on GitHub. The previous Subversion repository has been emptied, and will not be updated.
 
 We hope that, by being on GitHub, developers will be able to contribute changes to the project more easily, and that we will be able to reach our 1.0 milestone more gracefully.
+
+</section>

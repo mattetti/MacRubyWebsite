@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 ---
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 We are pleased to announce the first stable version of ControlTower, a Rack-based web application server for MacRuby. ControlTower can already run basic rack and Sinatra apps, but there are still a lot of features to add.
 <% end %>
@@ -83,3 +87,5 @@ Glad you asked! ControlTower is still a relatively young project, so there is st
 Of course, you don't have to be heavy into server development to lend a hand. We could use a lot of help just with testing and documentation (both of which are lacking currently). Perhaps the simplest and most important thing you can do to help is to try it out and "send in your bug reports and feature requests":https://www.macruby.org/trac/newticket. We started building ControlTower for our own purposes, but now we're ready to share it with the community and see where you take it.
 
 Feel also free to open new discussions about ControlTower on our "mailing-list":http://lists.macosforge.org/mailman/listinfo.cgi/macruby-devel.
+
+</section>

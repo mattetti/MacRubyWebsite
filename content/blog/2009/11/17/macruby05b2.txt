@@ -8,6 +8,10 @@ filter:
   - erb
   - textile
 --- 
+<h2 class="headerText lobsterFont"> <%= h(@page.title) %> </h2>
+
+<section class="block">
+
 <% @page[:excerpt] = capture_erb do %>
 After a month of hard work we are pleased to offer the second beta of MacRuby 0.5. We are expecting one more beta before shipping the final 0.5.
 <% end %>
@@ -86,3 +90,6 @@ Target pid: 72593
                                          RubyArray       2434      
                                         NSCFString       21240     
 </pre> 
+
+
+</section>
