@@ -33,8 +33,8 @@ HotCocoa is a thin & idiomatic Ruby layer that sits above Cocoa and other framew
 
 HotCocoa used to be developed inside the MacRuby project, but we decided that it would have a better life on "GitHub":http://github.com, where it is far easier for developers to submit contributions. HotCocoa also has been transformed as a gem and is included in the 0.5 package installer. Be sure to require rubygems before using it.
 
-<pre class="commands">
-require 'rubygems'
+<pre>
+<code>require 'rubygems'
 require 'hotcocoa'
 include HotCocoa
 application do |app|
@@ -42,7 +42,7 @@ application do |app|
   b = button :title => 'Hello'
   b.on_action { puts 'World!' }
   win << b
-end
+end</code>
 </pre>
 
 If you're interested in HotCocoa, make sure to "clone the project":http://github.com/richkilmer/hotcocoa and start hacking!
@@ -51,8 +51,8 @@ h3. More Elegant Ahead-of-Time Compilation
 
 The macrubyc command-line tool has been improved to support the compilation of multiple Ruby source file into dynamic libraries. This is useful when you have several executables sharing the same Ruby code.
 
-<pre class="commands">
-$ cd /tmp
+<pre>
+<code>$ cd /tmp
 $ echo "def hello(n); puts 'hello ' + n; end" > t1.rb
 $ echo "def hello_world; hello 'world'; end" > t2.rb
 $ echo "require 't1'; require 't2'; hello_world" > test.rb
@@ -62,13 +62,13 @@ code.dylib: Mach-O 64-bit dynamically linked shared library x86_64
 $ macrubyc test.rb code.dylib -o test
 $ rm t1.rb t2.rb test.rb 
 $ ./test
-hello world
+hello world</code>
 </pre>
 
 Also, macrubyc now comes with a man-page which provides more information on how to use it. Check it out!
 
-<pre class="commands">
-$ man macrubyc
+<pre>
+<code>$ man macrubyc</code>
 </pre>
 
 h3. Grand Central Dispatch Support

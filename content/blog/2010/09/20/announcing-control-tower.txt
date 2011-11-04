@@ -37,16 +37,14 @@ h3. How do I use it?
 
 The easiest way to grab the latest version of ControlTower is to use @macgem@:
 
-<pre class="commands">
-$ sudo macgem install control_tower
-</pre>
+<pre><code>$ sudo macgem install control_tower
+</code></pre>
 
 The source code of the project is also available on our "repository":http://svn.macosforge.org/repository/ruby/ControlTower/ and ControlTower can also be installed from there.
 
 There are two basic ways to interact with a Rack-based web server: create a rack-up file, or use a Rack::Handler in your code. Currently, both of these mechanisms work with ControlTower. Using a rack-up file is probably the simplest and most straight forward way to get up and running, and we've included a number of sample rack-up files in the "sample" directory of the repository. Once you have built and installed the ControlTower gem, you can use the @control_tower@ command to run any rack-up config:
 
-<pre class="commands">
-$ cat hello.ru
+<pre><code>$ cat hello.ru
 class Hello
   def call(env)
     [200, { 'Content-Type' => 'text/plain' }, "Hello, world! Your environment is #{env}"]
@@ -57,16 +55,14 @@ run Hello.new
 $ control_tower -R hello.ru
 You are cleared for take-off!
 Listening on 0.0.0.0:3000
-</pre>
+</code></pre>
 
 Alternatively, if you would like to start up the ControlTower server from within your code, you can use the @Rack::Handler::ControlTower@ class included with the ControlTower gem. This class has a single @run@ method that takes a rack "app" object and an options hash as its arguments. The options hash can be used to set the same server parameters as the command line tool. So, for example you can do:
 
-<%- coderay :lang => 'ruby' do -%>
-app = MyApp.new
+<pre><code>app = MyApp.new
 Rack::Handle::ControlTower.run(app, {:port => 80,
                                      :host => 'myserver.com',
-                                     :concurrent => true })
-<%- end -%>
+                                     :concurrent => true })</code></pre>
 
 Though, keep in mind that this method will block untill the server stops running, so if you want to do something else while the server is running you should put this code in a thread.
 <br />

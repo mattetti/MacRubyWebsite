@@ -39,21 +39,21 @@ h3. Better Ahead-of-Time Compiler
 
 Many compiler bugs have been fixed and the macrubyc utility is now able to generate fat binaries, via the --arch argument.
 
-<pre class="commands">
-$ macrubyc hello.rb -o hello --arch i386 --arch x86_64
+<pre>
+<code>$ macrubyc hello.rb -o hello --arch i386 --arch x86_64</code>
 </pre>
 
 Also, macrubyc will generate by default executables linking against MacRuby.framework dynamically, which greatly reduces the executable size. In order to build a full standalone executable, the --static argument must be passed.
 
 A new utility, called macruby_deploy, is now available to help you deploy your MacRuby applications. It provides options to compile ahead-of-time your application's Ruby source code as well as relocating the MacRuby framework inside the application bundle. This way your application is ready for deployment, with its source code hidden because it is pre-compiled. 
 
-<pre class="commands">
-$ macruby_deploy 
+<pre>
+<code>$ macruby_deploy 
 Usage: macruby_deploy [options] application-bundle
         --compile                    Compile the bundle source code
         --embed                      Embed MacRuby inside the bundle
         --no-stdlib                  Do not embed the standard library
-    -v, --version                    Display the version
+    -v, --version                    Display the version</code>
 </pre>
 
 These functionalities are also available as Xcode targets, a few mouse clicks away.
@@ -66,8 +66,8 @@ DTrace static probes have been added to the VM, providing the exact same support
 
 MacRuby ships with a few DTrace example scripts. Here is one which prints some information regarding objects collected by the GC at a given time.
 
-<pre class="commands">
-$ sudo dtrace -qs sample-macruby/DTrace/collected_objects64.d -p 72593
+<pre>
+<code>$ sudo dtrace -qs sample-macruby/DTrace/collected_objects64.d -p 72593
 Target pid: 72593
 
 ^C
@@ -88,7 +88,7 @@ Target pid: 72593
                                           NSCFData       612       
                                     NSCFDictionary       1204      
                                          RubyArray       2434      
-                                        NSCFString       21240     
+                                        NSCFString       21240</code>  
 </pre> 
 
 

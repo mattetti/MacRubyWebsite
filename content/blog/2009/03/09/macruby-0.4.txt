@@ -19,37 +19,37 @@ After several months of development and some slight delays, MacRuby 0.4 is now a
 
 This is quite an important release that brings new features and fixes several problems. The changes are too numerous to be all mentioned, so here is a selection of the most interesting ones.
 
-h3. Threaded GC
+<h3 class="headerText lobsterFont">Threaded GC</h3>
 
 The MacRuby garbage collector is now running in multi-threaded mode by default. That means that MacRuby will always do garbage collections on a separate thread and therefore not interrupt the program's flow. 
 
-h3. Full 64-bit Support
+<h3 class="headerText lobsterFont">Full 64-bit Support</h3>
 
 MacRuby is now fully working in both Intel 32-bit and 64-bit modes. If you are running a recent Mac chances are that it is 64-bit and MacRuby will run faster on it. This is mainly due to the fact that the underlying infrastructure has been significantly improved for 64-bit processors.
 
-h3. DTrace Probes
+<h3 class="headerText lobsterFont">DTrace Probes</h3>
 
 DTrace probes have been added to the core of the interpreter. You can now trace various things such as method calls or exceptions. All of that can be done on any MacRuby processes in the system.
 
-<pre class="commands">
-provider macruby {
+<pre>
+<code>provider macruby {
     probe insn__entry(char *insnname, char *sourcefile, int sourceline);
     probe insn__return(char *insnname, char *sourcefile, int sourceline);
     probe method__entry(char *classname, char *methodname, char *sourcefile, int sourceline);
     probe method__return(char *classname, char *methodname, char *sourcefile, int sourceline);
     probe raise(char *classname, char *sourcefile, int sourceline);
     probe rescue(char *sourcefile, int sourceline);
-};
+};</code>
 </pre>
 
 DTrace is a very powerful tool that has proven to be extremely useful when debugging live applications. MacRuby ships with several DTrace scripts in "/Developer/Examples/Ruby/MacRuby/DTrace":http://www.macruby.org/trac/browser/MacRuby/trunk/sample-macruby/DTrace to profile various things such as method count, duration or even objects collected by the GC.
 
-h3. Runtime Objective-C API
+<h3 class="headerText lobsterFont">Runtime Objective-C API</h3>
 
 MacRuby now exposes "an Objective-C API":http://www.macruby.org/trac/browser/MacRuby/trunk/include/ruby/objc.h that can be used to control the runtime from a pure Cocoa environment.
 
-<pre class="commands">
-$ cat hello_macruby.m 
+<pre>
+<code>$ cat hello_macruby.m 
 #import <Foundation/Foundation.h>
 #import <MacRuby/MacRuby.h>
 
@@ -60,16 +60,16 @@ int main(void) {
 }
 $ gcc hello_macruby.m -o hello_macruby -framework Foundation -framework MacRuby -fobjc-gc
 $ ./hello_macruby 
-hello MacRuby
+hello MacRuby</code>
 </pre>
 
 It should be helpful if you are working on an Objective-C Cocoa application and are considering using MacRuby to either implement new functionalities or to provide a scripting interface to your native objects.
 
-h3. New Xcode Templates
+<h3 class="headerText lobsterFont">New Xcode Templates</h3>
 
 A "MacRuby Core Data Application" template is now available, as well as an "Embed MacRuby" target. The latter can be used to embed MacRuby.framework inside your application bundle. Embedding the framework allows you to distribute your application to users and not require them to install MacRuby. 
 
-h3. A Better HotCocoa
+<h3 class="headerText lobsterFont">A Better HotCocoa</h3>
 
 HotCocoa is a thin, idiomatic Ruby layer that sits above Cocoa and other frameworks. It was introduced in MacRuby 0.3 and it has been significantly improved in 0.4.
 
@@ -79,11 +79,11 @@ A "deploy" task was added to the project's Rakefile. This new task prepares an a
 
 But the most interesting change is probably the new graphics layer, called "HotCocoa::Graphics":http://hcg.drtoast.com/. It provides a simple object-oriented interface into the power of Mac OS X's Core Graphics and Core Image drawing libraries.
 
-h3. Misc Changes
+<h3 class="headerText lobsterFont">Misc Changes</h3>
 
 Over the list of minor changes, Set has been reimplemented on top of NSSet and NSNumber implements the Numeric methods. Finally, the standard library was updated to Ruby 1.9.1's version.
 
-h3. Caveat Lector
+<h3 class="headerText lobsterFont">Caveat Lector</h3>
 
 While MacRuby 0.4 turns out to be pretty stable when it comes to Cocoa development, there are still a few problems with C extensions, RubyGems and Ruby IOs. We recommend to use the corresponding Cocoa APIs (when they exist) in the meantime we work on these issues.
 

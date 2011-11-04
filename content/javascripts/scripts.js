@@ -1,3 +1,9 @@
+$(document).ready(function() {
+	$(".equalHeights1").equalHeights(200,600);
+	$(".equalHeights2").equalHeights(200,600);
+	$(".equalHeights3").equalHeights(200,600);
+});
+
 /**
  * Equal Heights Plugin
  * Equalize the heights of elements. Great for columns or any elements

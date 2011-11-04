@@ -31,13 +31,13 @@ The new MacRuby 0.5 runtime is built upon "LLVM":http://llvm.org, a compiler inf
 
 MacRuby ships with the macrubyc command line utility, which is an interface to the AOT compiler. It can produce a "Mach-O":http://en.wikipedia.org/wiki/Mach-O compatible object file (.o) out of a given Ruby source file. You can also assemble multiple files to get a standalone executable binary ready for deployment. This can be used to compile a MacRuby Cocoa application, dramatically improving its startup time while making sure the original Ruby source code is not readable.
 
-<pre class="commands">
-$ echo "p ARGV.map { |x| x.to_i }.inject(0) { |x, y| x + y }" > t.rb
+<pre>
+<code>$ echo "p ARGV.map { |x| x.to_i }.inject(0) { |x, y| x + y }" > t.rb
 $ macrubyc t.rb -o t
 $ file t
 t: Mach-O 64-bit executable x86_64
 $ ./t 1 2 3 4 5
-15
+15</code>
 </pre>
 
 We also introduced a mode that generates a dynamic shared library out of a Ruby source file, using the new .rbo extension. MacRuby at runtime will #require these .rbo files in priority. We pre-compiled parts of the standard library using this technique.
@@ -50,8 +50,8 @@ MacRuby uses native POSIX threads to represent the Thread class. Every native th
 
 MacRuby ships with an API for "Grand Central Dispatch":http://libdispatch.macosforge.org/ (GCD), a multicore computing functionality present in Mac OS 10.6, Snow Leopard. The significant advantage of GCD is not having to deal with threading directly. With our new GCD API you set up queues and dispatch Ruby blocks to them. GCD will handle executing those blocks on system threads, ensuring all your CPU cores are used.
 
-<pre class="commands">
-waiting_chairs = Dispatch::Queue.new('com.apple.waiting_chairs')
+<pre>
+<code>waiting_chairs = Dispatch::Queue.new('com.apple.waiting_chairs')
 semaphore = Dispatch::Semaphore.new(3)
 index = -1
 while true
@@ -64,7 +64,7 @@ while true
     semaphore.signal
     puts "Shave and a haircut #{index}"
   end
-end
+end</code>
 </pre>
 
 h3. Optimizations

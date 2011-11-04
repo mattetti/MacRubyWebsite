@@ -19,8 +19,8 @@ It is a great pleasure to announce the immediate availability of MacRuby 0.3! We
 
 First of all, MacRuby now ships with a core library called HotCocoa, something which greatly simplifies Cocoa programming while also using simple Ruby idioms. Rich Kilmer is the man behind this amazing work. You will find several examples in "/Developer/Examples/Ruby/MacRuby/HotCocoa":http://www.macruby.org/trac/browser/MacRuby/tags/0.3/sample-macruby/HotCocoa, and some initial bits of documentation in "http://www.macruby.org/trac/wiki/HotCocoa":http://www.macruby.org/trac/wiki/HotCocoa (which will be improved very soon).
 
-<% coderay :lang => 'ruby' do -%>
-require 'hotcocoa'
+<pre>
+<code>require 'hotcocoa'
 include HotCocoa
 application do |app|
   window :size => [100, 50] do |win|
@@ -28,8 +28,8 @@ application do |app|
     b.on_action { puts 'World!' }
     win << b
   end
-end
-<% end -%>
+end</code>
+</pre>
 
 Another big change in the method dispatcher, which is now entirely based on the Objective-C runtime. MacRuby is now using the Objective-C runtime to implement the Ruby class semantics and also to dispatch pure Ruby methods. This is an important change because it simplifies a lot the core implementation and also eliminates ambiguities between both worlds. Performance wise, we should be as performant as yarv:  Faster in some cases, slower in others.
 

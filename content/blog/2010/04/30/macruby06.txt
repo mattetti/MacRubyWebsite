@@ -41,33 +41,33 @@ The macrubyd command-line executable pilots the debugger. It provides a gdb-like
 
 Let's consider the following broken program:
 
-<pre class="commands">
-$ cat t.rb 
+<pre>
+<code>$ cat t.rb 
 def foo(n)
   bar(n)
 end
 5.times do |i|
   foo(i)
-end
+end</code>
 </pre>
 
 And start it inside the debugger.
 
-<pre class="commands">
-$ macrubyd t.rb 
+<pre>
+<code>$ macrubyd t.rb 
 Starting program.
 1	def foo(n)
 t.rb:1> c
 /Users/lrz/src/t.rb:2:in `foo:': undefined method `bar' for main:TopLevel (NoMethodError)
 	from /Users/lrz/src/t.rb:5:in `block'
 	from /Users/lrz/src/t.rb:4:in `<main>'
-Program exited.
+Program exited.</code>
 </pre>
 
 We immediately get an exception at line 2. We can restart the debugger, break at this line, then examine the argument and the backtrace.
 
-<pre class="commands">
-> r
+<pre>
+<code>> r
 Starting program.
 1	def foo(n)
 t.rb:1> b t.rb:2
@@ -82,13 +82,13 @@ t.rb:2> bt
 #0	/Users/lrz/src/t.rb:2:in `foo:'
 #1	/Users/lrz/src/t.rb:5:in `block'
 #2	/Users/lrz/src/t.rb:4:in `<main>'
-2	  bar(n)
+2	  bar(n)</code>
 </pre>
 
 Then, we can define the missing method on the fly and resume the execution of the program after disabling the breakpoint.
 
-<pre class="commands">
-t.rb:2> p def bar(x); puts "-> #{x}"; end
+<pre>
+<code>t.rb:2> p def bar(x); puts "-> #{x}"; end
 => nil
 2	  bar(n)
 t.rb:2> disable 1
@@ -100,7 +100,7 @@ t.rb:2> c
 -> 2
 -> 3
 -> 4
-Program exited.
+Program exited.</code>
 </pre>
 
 An interesting feature of the debugger is that it has been abstracted into a simple Objective-C API, of which macrubyd is just one client. In the future we might see other clients.
@@ -113,21 +113,21 @@ In MacRuby 0.6, we improved the existing native bindings with additional, higher
 
 The new "dispatch" library exposes the Job class, which is likely the easiest way to perform concurrent work. Say you have a complex, long-running calculation you want to happen in the background. Create a job by passing Dispatch::Job's initializer the block you want to execute:
 
-<pre class="commands">
-$ /usr/local/bin/macirb --simple-prompt
+<pre>
+<code>$ /usr/local/bin/macirb --simple-prompt
 >> require 'dispatch'
 => true
 >> job = Dispatch::Job.new { Math.sqrt(10**100) }
-=> #<Dispatch::Job:0x40075d1e0 @queue=com.apple.root.default-priority @group=#<Dispatch::Group:0x40073c2c0> @values=[1.0e+50]>
+=> #<Dispatch::Job:0x40075d1e0 @queue=com.apple.root.default-priority @group=#<Dispatch::Group:0x40073c2c0> @values=[1.0e+50]></code>
 </pre>
 
 This atomically adds the block to GCD's default concurrent queue, then returns immediately, so you don't stall the main thread.
 
 The downside is that you don't know exactly when your job will execute. The #value method can be used to obtain the result of executing that block.
 
-<pre class="commands">
->> value = job.value
-=> 1.0e+50
+<pre>
+<code>>> value = job.value
+=> 1.0e+50</code>
 </pre>
 
 This will wait until the value has been calculated, allowing it to be used as an "explicit Future":http://en.wikipedia.org/wiki/Futures_and_promises. However, this may stall the main thread indefinitely, which reduces the benefits of concurrency.

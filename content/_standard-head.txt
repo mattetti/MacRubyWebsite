@@ -7,13 +7,6 @@ filter: erb
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 
 <script type="text/javascript" src="/javascripts/scripts.js"></script>
-<script type='text/javascript'>
-$(document).ready(function() {
-	$(".equalHeights1").equalHeights(200,600);
-	$(".equalHeights2").equalHeights(200,600);
-	$(".equalHeights3").equalHeights(200,600);
-});
-</script>
 
 <!-- Coda Slider 2.0 -->
 <script type="text/javascript" src="/javascripts/jquery.easing.1.3.js"></script>

@@ -32,7 +32,7 @@ MacRuby's previous release, 0.6, announced that support for Cocoa development wa
 A long-awaited enhancement to MacRuby's Cocoa layer, support for "C blocks":http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Blocks/Articles/bxUsing.html, has been implemented in this release. You can now pass a Ruby Proc object to an API that expects a C block, similarly if this API expected a C function pointer. However, this new change requires additional BridgeSupport metadata which will be installed from our new, upcoming "BridgeSupport":http://bridgesupport.macosforge.org/ release.
 
 <pre class="commands">
-$ cat t.rb 
+<code>$ cat t.rb 
 framework 'Foundation'
 a = [1, 2, 3, 4, 5]
 a.enumerateObjectsUsingBlock(Proc.new { |obj, index, stop|
@@ -42,13 +42,12 @@ a.enumerateObjectsUsingBlock(Proc.new { |obj, index, stop|
 $ macruby t.rb 
 1
 2
-3
-</pre>
+3</code></pre>
 
 The "sandbox(7)":http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man7/sandbox.7.html facility is now exposed in MacRuby via the Sandbox class, and can now be used to restrict access to certain facilities in the current process and therefore limit potential damage that can happen if a vulnerability is exploited. It is a good companion to the Ruby standard $SAFE functionality, also supported in MacRuby, because it can constrain access to all system services used by the process, including by C extensions or Cocoa APIs, not just from pure-Ruby APIs.
 
 <pre class="commands">
-Sandbox.no_internet          # TCP/IP networking is prohibited.
+<code>Sandbox.no_internet          # TCP/IP networking is prohibited.
 Sandbox.no_network           # All sockets-based networking is prohibited. 
 Sandbox.no_writes            # File system writes are prohibited.
 Sandbox.temporary_writes     # File system writes are restricted to temporary folders.
@@ -56,7 +55,7 @@ Sandbox.pure_computation     # All operating system services are prohibited.
 
 Sandbox#apply!               # Apply a given sandbox. Once a sandbox is applied, 
                              # it can not be removed and no other sandbox
-                             # can be applied on top.
+                             # can be applied on top.</code>
 </pre>
 
 In this release we also reduced the memory and disk footprint of the runtime.
