@@ -18,7 +18,7 @@ h2(headerText lobsterFont). <%= h(@page.title) %>
 
 <div class='tutorial'>
 
-h3. Abstract
+<h3 class="headerText lobsterFont">Abstract</h3>
 
 The Mac OSX operating system, since Mac OSX 10.5, has exposed features in the C header 
 "sandbox.h", and the dynamic library "system.dylib" that make creating a sandbox environment 
@@ -26,7 +26,7 @@ for a given process extremely easy. MacRuby exposes these features through a Rub
 called "Sandbox". The Sandbox class was introduced in MacRuby 0.7.
 
 
-h3. Profiles
+<h3 class="headerText lobsterFont">Profiles</h3>
 
 The characteristics of a sandbox are determined through *profiles*.  
 Every profile has its own characteristics and those characterisitcs determine what kind of 
@@ -43,7 +43,7 @@ be apart of a private API, and may be removed or changed in future OSX releases.
 Default profiles are mapped as class methods on the Sandbox class.
 Every profile returns an instance of the Sandbox class.
 
-* Sandbox.pure_computation  
+* Sandbox.pure_computation
   Access by the current process to operating system resources is severly restricted. 
 
 * Sandbox.no_internet  
@@ -59,7 +59,7 @@ Every profile returns an instance of the Sandbox class.
 * Sandbox.no_writes   
   Access by the current process to write to anywhere on the filesystem is restricted.
 
-h3. Initiating a sandbox
+<h3 class="headerText lobsterFont">Initiating a sandbox</h3>
 
 As mentioned earlier, all default profiles are mapped to a method that returns an instance of the 
 Sandbox class.The sandbox class defines a single instance method(excluding those that are inherited),
@@ -69,10 +69,9 @@ MacRuby process.
 For example, to apply the *Sandbox.pure_computation* profile, and create a sandbox for the 
 current MacRuby process, you would do the following:
 
-<% coderay :lang => 'ruby' do %>
-#!/usr/local/bin/macruby
-Sandbox.pure_computation.apply!
-<% end %>
+<pre><code>#!/usr/local/bin/macruby
+Sandbox.pure_computation.apply!</code>
+</pre>
 
 The *Sandbox#apply!* method will return nil when it is successful, and it will raise a SecurityError
 if it was not possible to initialize a sandbox. See the "Exception handling" section for more 
@@ -83,56 +82,56 @@ can accept a string of Scheme expressions?
 
 There are some custom profiles we can use to demonstrate this:
 
-<% coderay :lang => 'ruby' do %>
-#!/usr/local/bin/macruby
-Sandbox.new(File.read('/usr/share/sandbox/bsd.sb')).apply!
-<% end %>
+<pre><code>#!/usr/local/bin/macruby
+Sandbox.new(File.read('/usr/share/sandbox/bsd.sb')).apply!</code>
+</pre>
 
 You could write your own profile, save it to file, and pass it to the Sandbox constructor, or if 
 you're feeling lazy, bypass the file and pass a string with scheme expressions in it.
 
-h3. Exception handling
+
+<h3 class="headerText lobsterFont">Exception handling</h3>
 
 When a sandbox has been initiated successfully, and the current MacRuby process violates 
 restrictions imposed by the Sandbox class, it is typical for the offending method to raise a 
 subclass of **SystemCallError**. An exception to this would be the *Kernel#system* method,
 which will silently return nil.
 
-<% coderay :lang => 'ruby' do %>
-#!/usr/local/bin/macruby
+<pre><code>#!/usr/local/bin/macruby
 require 'open-uri'
 begin
   Sandbox.no_internet.apply!
   open('http://www.macruby.org')  
 rescue SystemCallError => e
   puts "#{e.class} : #{e.message}"
-end
-<% end %>
+end</code>
+</pre>
 
 When a sandbox could not be initiated successfully, the *Sandbox#apply!* method will raise
 a SecurityError exception. This can be handled easily: 
 
-<% coderay :lang => 'ruby' do %>
-#!/usr/local/bin/macruby
+<pre><code>#!/usr/local/bin/macruby
 
 begin
   Sandbox.pure_computation.apply!
   Sandbox.pure_computation.apply! 
 rescue SecurityError => e
   puts "I couldn't initialize a sandbox!"
-end
-<% end %>
+end</code>
+</pre>
 
 The second call to Sandbox.pure_computation.apply! will raise a SecurityError because of restrictions
 imposed by the first call to Sandbox.pure_computation.apply!
 
-h3. Notes
+
+<h3 class="headerText lobsterFont">Notes</h3>
 
 All resources acquired before the sandbox is initialized(Socket objects, File objects, …) are not 
 restricted by the Sandbox class, and could be used freely even after the Sandbox class has initiated
 a sandbox.
 
-h3. See also
+
+<h3 class="headerText lobsterFont">See also</h3>
 
 * Man pages
 ** sandbox   
